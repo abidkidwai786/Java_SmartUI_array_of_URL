@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="100" name="New Browsers" parallel="tests">
+
+    <test name="Android">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="platformVersion" value="11"/>
+        <parameter name="platform" value="Android"/>
+        <parameter name="deviceName" value="Galaxy S10"/>
+        <classes>
+            <class name="demoMobile"/>
+        </classes>
+    </test>
+    <test name="iOS">
+        <parameter name="browser" value="safari"/>
+        <parameter name="platformVersion" value="14.2"/>
+        <parameter name="platform" value="iOS"/>
+        <parameter name="deviceName" value="iPad (6th generation)"/>
+        <classes>
+            <class name="demoMobile"/>
+        </classes>
+    </test>
+</suite>

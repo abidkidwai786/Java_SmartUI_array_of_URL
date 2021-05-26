@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="200" name="DesktopBrowsers" parallel="tests">
+
+
+    <test name="Win10">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="version" value="75.0"/>
+        <parameter name="platform" value="Win10"/>
+
+        <classes>
+            <class name="demoDesktop"/>
+        </classes>
+    </test>
+    <test name="Mac">
+        <parameter name="browser" value="Safari"/>
+        <parameter name="version" value="12.0"/>
+        <parameter name="platform" value="Macos Mojave"/>
+        <classes>
+            <class name="demoDesktop"/>
+        </classes>
+    </test>
+
+</suite>
