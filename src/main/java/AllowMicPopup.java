@@ -3,9 +3,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.AppiumDriver;
 import java.net.URL;
 
-public class AllowCameraPopup {
-    public static final String AUTOMATE_USERNAME = "";
-    public static final String AUTOMATE_KEY = "";
+public class AllowMicPopup {
+    public static final String AUTOMATE_USERNAME = System.getenv("LT_USERNAME");
+    public static final String AUTOMATE_KEY = System.getenv("LT_ACCESS_KEY");
     public static final String URL = "https://" + AUTOMATE_USERNAME + ":" + AUTOMATE_KEY + "@hub.lambdatest.com/wd/hub";
 
     public static void main(String[] args) throws Exception {
@@ -19,17 +19,18 @@ public class AllowCameraPopup {
         //caps.setCapability("w3c",true);
         AppiumDriver driver = new AppiumDriver(new URL(URL), caps);
 
-        //WebCam Test
-        driver.get("https://webcamtests.com/check");
+        //Mic Test
+        driver.get("https://www.vidyard.com/mic-test/");
         Thread.sleep(5000);
-        driver.findElement(By.id("webcam-launcher")).click();
+        driver.findElement(By.xpath("/html/body/section[1]/div/div/div[1]/button")).click();
         Thread.sleep(5000);
-        // To accept/block the popup, you need to switch the context to “NATIVE_APP“ and click on the Allow/Block button.
         driver.context("NATIVE_APP");
         driver.findElement(By.xpath(".//android.widget.Button[@text='Allow']")).click();
         driver.findElement(By.xpath(".//android.widget.Button[@text='Allow']")).click();
         Thread.sleep(5000);
         driver.context("CHROMIUM");
+        //******************** Next test steps *******************
+
         driver.quit();
     }
 }
