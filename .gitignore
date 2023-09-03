@@ -1,4 +1,5 @@
-src/main/java/fetch_build_api.java
 src/main/java/DownloadFileFromLT_VM.java
+src/main/java/fetch_build_api.java
+src/main/java/NativeAppFromCloudStorage.java
 src/main/java/NativeAppFromLocal.java
 .gitignore
